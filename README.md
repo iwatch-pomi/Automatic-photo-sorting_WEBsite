@@ -25,11 +25,17 @@ python3 -m http.server 8000
 
 ## GitHub Pages での公開手順
 
-1. このリポジトリに変更をプッシュする
-2. GitHub の **Settings → Pages** を開く
-3. **Source** を「Deploy from a branch」にする
-4. **Branch** を公開したいブランチ（例: `main`）/ `root` に設定して保存
-5. 数分後、`https://iwatch-pomi.github.io/Automatic-photo-sorting_WEBsite/` で公開されます
+このリポジトリには、GitHub Actions による自動デプロイのワークフロー
+（`.github/workflows/deploy-pages.yml`）が含まれています。
+
+1. GitHub の **Settings → Pages** を開く
+2. **Build and deployment → Source** を「**GitHub Actions**」に設定する（1回だけ）
+3. 以降、`claude/magical-euler-pqjjf2` ブランチへプッシュするたびに自動でデプロイされます
+   （手動実行は Actions タブの「Deploy to GitHub Pages」→ Run workflow からも可能）
+4. 数分後、`https://iwatch-pomi.github.io/Automatic-photo-sorting_WEBsite/` で公開されます
+
+> 別のブランチ（例: `main`）から公開したい場合は、`deploy-pages.yml` の
+> `on.push.branches` を該当ブランチ名に変更してください。
 
 ## 掲載内容について
 
