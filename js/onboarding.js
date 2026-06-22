@@ -11,42 +11,24 @@
   var APPSTORE_URL = 'https://apps.apple.com/jp/app/id6779217541';
 
   // 質問データ（コマフォト＝大学生向け授業写真整理アプリ に最適化）
+  // shoot の value（分）と roll の mult（係数）で年間ロス時間を試算
   var QUESTIONS = [
     { id: 'grade', q: 'いまの学年は？', options: [
       { e: '🆕', label: '大学1年生' }, { e: '📗', label: '大学2年生' },
       { e: '📘', label: '大学3年生' }, { e: '🎓', label: '大学4年生・大学院生' } ] },
     { id: 'field', q: '文系？ 理系？', options: [
       { e: '📚', label: '文系' }, { e: '🧪', label: '理系' }, { e: '🎨', label: 'その他・芸術系' } ] },
-    { id: 'coma', q: '1週間に受けている授業は何コマ？', options: [
-      { e: '🙂', label: '〜10コマ', value: 8 }, { e: '😀', label: '11〜15コマ', value: 13 },
-      { e: '😅', label: '16〜20コマ', value: 18 }, { e: '🥵', label: '21コマ以上', value: 23 } ] },
     { id: 'shoot', q: '授業中、板書やスライドを写真に撮る？', options: [
-      { e: '📸', label: 'よく撮る' }, { e: '🤳', label: 'たまに撮る' }, { e: '🙅', label: 'ほとんど撮らない' } ] },
-    { id: 'lost', q: '撮った写真、あとで探すのに困ったことは？', options: [
-      { e: '😱', label: 'しょっちゅうある' }, { e: '😥', label: 'たまにある' }, { e: '😌', label: 'あまりない' } ] },
-    { id: 'searchtime', q: 'テスト前、目当ての板書を探すのにかかる時間は？', options: [
-      { e: '⚡', label: '5分未満', value: 4 }, { e: '⏱️', label: '5〜15分', value: 10 },
-      { e: '⏳', label: '15〜30分', value: 22 }, { e: '😵', label: '30分以上', value: 35 } ] },
+      { e: '📸', label: 'よく撮る', value: 20 },
+      { e: '🤳', label: 'たまに撮る', value: 12 },
+      { e: '🙅', label: 'ほとんど撮らない', value: 6 } ] },
     { id: 'roll', q: 'いまのカメラロールの状態は？', options: [
-      { e: '🌀', label: '板書と私生活が混ざってカオス' }, { e: '📂', label: 'だいたい整理できている' }, { e: '✨', label: 'きれいに整理済み' } ] },
-    { id: 'note', q: 'ノートを取るのは得意？', options: [
-      { e: '✍️', label: '得意' }, { e: '😐', label: '普通' }, { e: '📷', label: '苦手（写真に頼りがち）' } ] },
-    { id: 'volume', q: '1科目で学期末までに撮る板書はどれくらい？', options: [
-      { e: '🍃', label: '〜10枚' }, { e: '📄', label: '11〜50枚' }, { e: '📚', label: '51〜100枚' }, { e: '🗻', label: '100枚以上' } ] },
+      { e: '🌀', label: '板書と私生活が混ざってカオス', mult: 1.4 },
+      { e: '📂', label: 'だいたい整理できている', mult: 1.0 },
+      { e: '✨', label: 'きれいに整理済み', mult: 0.6 } ] },
     { id: 'value', q: 'いちばん重視したいのは？', options: [
       { e: '⏰', label: 'タイパ（時間短縮）' }, { e: '📈', label: '成績アップ' },
-      { e: '😮‍💨', label: 'ストレス軽減' }, { e: '💯', label: 'ぜんぶ' } ] },
-    { id: 'testrange', q: 'テスト範囲のメモ・管理はどうしてる？', options: [
-      { e: '🤷', label: '特にしていない' }, { e: '📝', label: '手書きでメモ' },
-      { e: '📱', label: 'アプリで管理' }, { e: '🧠', label: '記憶で何とか' } ] },
-    { id: 'term', q: '複数学期・通年での管理は必要？', options: [
-      { e: '✅', label: '必要' }, { e: '🤔', label: 'たぶん必要' }, { e: '🙆', label: 'いまは不要' } ] },
-    { id: 'device', q: '使っている端末は？', options: [
-      { e: '📱', label: 'iPhone' }, { e: '📲', label: 'iPad' },
-      { e: '🍎', label: 'iPhone と iPad 両方' }, { e: '🤖', label: 'Android など' } ] },
-    { id: 'expect', q: 'コマフォトにいちばん期待するのは？', options: [
-      { e: '🗂️', label: '時間割で自動仕分け' }, { e: '🔎', label: '探す時間をゼロに' },
-      { e: '🧹', label: 'カメラロールの整理' }, { e: '🔖', label: 'メモ・テスト範囲の管理' } ] }
+      { e: '😮‍💨', label: 'ストレス軽減' }, { e: '💯', label: 'ぜんぶ' } ] }
   ];
 
   var LOAD_MSGS = [
@@ -137,12 +119,14 @@
   function renderResult() {
     setBar(100);
     // テスト前の「写真を探すだけ」の年間ロス時間を試算
-    var subjects = val('coma', 13);
-    var searchMin = val('searchtime', 10);
-    var examsPerYear = 4; // 前期中間・期末／後期中間・期末 など
-    var annualHours = Math.max(1, Math.round((searchMin * subjects * examsPerYear) / 60));
+    // 撮影頻度（shoot）×カメラロールの乱れ（roll）から概算
+    var shootMin = val('shoot', 12);
+    var rollMult = (answers.roll && typeof answers.roll.mult === 'number') ? answers.roll.mult : 1.0;
+    var subjects = 12;     // 1人あたりの想定科目数
+    var examsPerYear = 4;  // 前期中間・期末／後期中間・期末 など
+    var annualHours = Math.max(1, Math.round((shootMin * rollMult * subjects * examsPerYear) / 60));
 
-    var expect = answers.expect ? answers.expect.label : '時間割で自動仕分け';
+    var expect = answers.value ? answers.value.label : 'タイパ（時間短縮）';
 
     main.innerHTML =
       '<div class="ob__inner ob__result">' +
