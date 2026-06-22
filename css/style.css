@@ -60,6 +60,7 @@ img {
 
 .section {
   padding: 88px 0;
+  scroll-margin-top: 80px; /* 固定ヘッダーにアンカーが隠れないように */
 }
 
 .section--soft {
@@ -1302,4 +1303,106 @@ img {
   .plans {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+/* =========================================================
+   小型スマートフォン（〜480px）向け最適化
+   ========================================================= */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  .section {
+    padding: 52px 0;
+  }
+
+  .section__head {
+    margin-bottom: 36px;
+  }
+
+  .section__title {
+    font-size: 1.55rem;
+  }
+
+  .section__lead {
+    font-size: 0.95rem;
+  }
+
+  /* ヒーロー */
+  .hero {
+    padding: 48px 0 60px;
+  }
+
+  .hero__title {
+    font-size: 1.85rem;
+  }
+
+  .hero__desc {
+    font-size: 1rem;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ボタン・ナビ */
+  .btn {
+    padding: 12px 20px;
+  }
+
+  .store-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* 料金プランは1列に */
+  .plans {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  /* ストアのメタ情報 */
+  .store-meta {
+    gap: 12px 20px;
+  }
+
+  .store-meta__value {
+    font-size: 1.1rem;
+  }
+
+  /* スクショ見出し */
+  .shot__title {
+    font-size: 1.3rem;
+  }
+
+  /* キャンペーン文 */
+  .campaign__inner {
+    padding: 16px 4px;
+  }
+
+  .campaign__text {
+    font-size: 0.92rem;
+  }
+
+  /* ドキュメント（プライバシー） */
+  .doc {
+    padding: 40px 0 64px;
+  }
+
+  .doc__title {
+    font-size: 1.6rem;
+  }
+
+  .doc h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* 横スクロール（はみ出し）防止 */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
 }
