@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>コマフォト｜板書写真を時間割で自動仕分け</title>
-  <meta name="description" content="コマフォトは、授業中に撮影した板書などの写真を、登録した時間割に基づいて授業ごとに自動で整理する学生向けアプリ。処理はすべて端末内で完結し、プライバシーも安心です。">
+  <title>コマフォト｜大学生のための時間割アルバム</title>
+  <meta name="description" content="コマフォトは、大学の時間割データと写真の撮影データを自動連動。撮るだけで授業・講義ごとにフォルダ仕分け・整理する、大学生のための時間割アルバムアプリです。無料・iPhone / iPad 対応。">
+  <meta property="og:title" content="コマフォト｜大学生のための時間割アルバム">
+  <meta property="og:description" content="撮るだけで、授業ごとに自動で片付く。最強の時間割アルバム。テスト前の「あの板書、どこだっけ？」をゼロに。">
+  <meta property="og:type" content="website">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -27,10 +30,10 @@
       </button>
 
       <ul class="nav__menu" id="navMenu">
-        <li><a class="nav__link" href="#features">機能</a></li>
-        <li><a class="nav__link" href="#steps">使い方</a></li>
-        <li><a class="nav__link" href="#download">ダウンロード</a></li>
-        <li><a class="btn btn--primary" href="#download">無料で始める</a></li>
+        <li><a class="nav__link" href="#features">特長</a></li>
+        <li><a class="nav__link" href="#reasons">便利な理由</a></li>
+        <li><a class="nav__link" href="#recommend">おすすめ</a></li>
+        <li><a class="btn btn--primary" href="#download">App Storeで入手</a></li>
       </ul>
     </div>
   </header>
@@ -41,38 +44,39 @@
     <section class="hero">
       <div class="container hero__inner">
         <div class="hero__copy">
-          <span class="hero__badge">📸 授業の板書写真を自動整理</span>
-          <h1 class="hero__title">板書写真を、<br><em>時間割で自動仕分け。</em></h1>
+          <span class="hero__badge">🎓 教育カテゴリ｜iPhone・iPad対応</span>
+          <h1 class="hero__title">授業ごとに自動で片付く、<br><em>最強の時間割アルバム。</em></h1>
           <p class="hero__desc">
-            コマフォトは、授業中に撮影した板書などの写真を、登録した時間割に基づいて
-            授業ごとに自動で整理する学生向けアプリです。撮るだけで、あとはおまかせ。
+            コマフォトは、あなたの大学の時間割データと、写真の撮影データをシステムが自動で連動。
+            撮ったその場で授業・講義ごとにフォルダ仕分け・整理整頓する、大学生のための学習支援ツールです。
+            テスト前の「あの板書、どこだっけ？」を完全にゼロに。
           </p>
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#download">無料でダウンロード</a>
-            <a class="btn btn--ghost" href="#features">機能を見る</a>
+            <a class="btn btn--primary" href="#download">App Storeで無料ダウンロード</a>
+            <a class="btn btn--ghost" href="#features">特長を見る</a>
           </div>
-          <p class="hero__note">写真の解析・整理はすべて端末内で完結。外部への送信は一切ありません。</p>
+          <p class="hero__note">無料・アプリ内購入あり／写真の解析・整理はすべて端末内で完結します。</p>
         </div>
 
         <div class="hero__visual">
-          <!-- アプリ画面モック（後で assets/ の実スクショに差し替え可） -->
+          <!-- アプリ画面モック（App Storeの実スクショに差し替え可: assets/screen-*.png） -->
           <div class="phone" aria-hidden="true">
             <div class="phone__screen">
               <div class="phone__bar"></div>
               <div class="phone__card">
-                <div class="phone__card-title">月曜 1限・数学</div>
+                <div class="phone__card-title">月曜 1限・英語</div>
                 <div class="phone__thumbs">
                   <div class="phone__thumb"></div><div class="phone__thumb"></div><div class="phone__thumb"></div>
                 </div>
               </div>
               <div class="phone__card">
-                <div class="phone__card-title">月曜 2限・英語</div>
+                <div class="phone__card-title">月曜 2限・数学</div>
                 <div class="phone__thumbs">
                   <div class="phone__thumb"></div><div class="phone__thumb"></div><div class="phone__thumb"></div>
                 </div>
               </div>
               <div class="phone__card">
-                <div class="phone__card-title">月曜 3限・物理</div>
+                <div class="phone__card-title">水曜 3限・地理</div>
                 <div class="phone__thumbs">
                   <div class="phone__thumb"></div><div class="phone__thumb"></div><div class="phone__thumb"></div>
                 </div>
@@ -83,56 +87,189 @@
       </div>
     </section>
 
-    <!-- 機能紹介 -->
+    <!-- キャンペーン告知 -->
+    <section class="campaign">
+      <div class="container campaign__inner">
+        <span class="campaign__tag">CAMPAIGN</span>
+        <p class="campaign__text">リリースキャンペーン中！<strong>Pro版が2ヶ月無料</strong>＋各プランに<strong>7日間の無料トライアル</strong></p>
+      </div>
+    </section>
+
+    <!-- スクリーンショット風ショーケース（App Store 4パネル再現） -->
     <section class="section" id="features">
       <div class="container">
         <div class="section__head">
-          <h2 class="section__title">主な機能</h2>
-          <p class="section__lead">板書の整理にかかる手間を、コマフォトがまるごと引き受けます。</p>
+          <h2 class="section__title">コマフォトでできること</h2>
+          <p class="section__lead">大量の板書写真を、まだアルバムから探していませんか？</p>
+        </div>
+
+        <div class="showcase">
+
+          <!-- パネル1: 時間割と連動 -->
+          <article class="shot">
+            <div class="shot__text">
+              <span class="shot__step">FEATURE 01</span>
+              <h3 class="shot__title">授業ごとに自動で片付く、<br>最強の時間割アルバム</h3>
+              <p class="shot__desc">カオスになりがちなカメラロールも、このアプリで一瞬。時間割と連動して、撮った写真が授業ごとにすっきり整理されます。</p>
+              <ul class="shot__points">
+                <li>時間割とピタッと連動</li>
+                <li>BEFORE のカオスな状態から AFTER の即整理へ</li>
+              </ul>
+            </div>
+            <div class="shot__visual">
+              <div class="phone" aria-hidden="true">
+                <div class="phone__screen">
+                  <div class="screen-head"><span>時間割と連動</span><span>月 火 水 木 金</span></div>
+                  <div class="tt-grid">
+                    <div class="tt-cell is-en">英語</div><div class="tt-cell"></div><div class="tt-cell"></div><div class="tt-cell"></div><div class="tt-cell is-math">数学</div>
+                    <div class="tt-cell"></div><div class="tt-cell is-math">数学</div><div class="tt-cell"></div><div class="tt-cell is-geo">地理</div><div class="tt-cell"></div>
+                    <div class="tt-cell is-math">数学</div><div class="tt-cell is-geo">地理</div><div class="tt-cell is-exp">実験</div><div class="tt-cell"></div><div class="tt-cell is-exp">実験</div>
+                    <div class="tt-cell"></div><div class="tt-cell"></div><div class="tt-cell is-en">英語</div><div class="tt-cell"></div><div class="tt-cell"></div>
+                  </div>
+                  <span class="bubble">このアプリで一瞬！</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- パネル2: 設定は一瞬 -->
+          <article class="shot">
+            <div class="shot__text">
+              <span class="shot__step">FEATURE 02</span>
+              <h3 class="shot__title">設定は一瞬、<br>あとは撮るだけ！</h3>
+              <p class="shot__desc">あなたのスケジュールに合わせて、賢くカスタマイズ。授業を追加して時間割を登録すれば、面倒な設定はもう終わりです。</p>
+              <ul class="shot__points">
+                <li>時間割とピタッと連動</li>
+                <li>「第N回」を自動付与</li>
+                <li>写真をアプリ内に保存してストレージ節約も</li>
+              </ul>
+            </div>
+            <div class="shot__visual">
+              <div class="phone" aria-hidden="true">
+                <div class="phone__screen">
+                  <div class="screen-head"><span>キャンセル</span><span>授業を追加　保存</span></div>
+                  <div class="set-row"><span>初回授業日を設定</span><span class="toggle"></span></div>
+                  <div class="set-row"><span>第N回を自動付与</span><span class="toggle"></span></div>
+                  <div class="set-row"><span>写真をアプリ内に保存</span><span class="toggle"></span></div>
+                  <div class="set-row"><span>曜日・コマを選択</span><span class="toggle"></span></div>
+                  <span class="bubble">ストレージ節約も！</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- パネル3: 撮るだけで自動整理 -->
+          <article class="shot">
+            <div class="shot__text">
+              <span class="shot__step">FEATURE 03</span>
+              <h3 class="shot__title">撮るだけで、<br>授業&回数ごとに自動整理！</h3>
+              <p class="shot__desc">もう、板書探しで迷わない。撮影した写真は授業・回数ごとのフォルダへ自動で振り分けられます。</p>
+              <ul class="shot__points">
+                <li>授業ごと・第N回ごとにフォルダ分け</li>
+                <li>不要な写真はスワイプで即削除</li>
+              </ul>
+            </div>
+            <div class="shot__visual">
+              <div class="phone" aria-hidden="true">
+                <div class="phone__screen">
+                  <div class="screen-head"><span>‹ Back</span><span>英語</span></div>
+                  <div class="folder-row">英語 <span>›</span></div>
+                  <div class="folder-row">数学 <span>›</span></div>
+                  <div class="folder-row">地理 <span>›</span></div>
+                  <div class="phone__card" style="margin-top:12px;">
+                    <div class="phone__card-title">第1回（6月1日）／ 第2回（6月8日）</div>
+                    <div class="phone__thumbs">
+                      <div class="phone__thumb"></div><div class="phone__thumb"></div><div class="phone__thumb"></div>
+                    </div>
+                  </div>
+                  <span class="bubble">不要な写真はスワイプで即削除！</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- パネル4: アルバムに自動整理 + メモ -->
+          <article class="shot">
+            <div class="shot__text">
+              <span class="shot__step">FEATURE 04</span>
+              <h3 class="shot__title">すべての授業写真を、<br>授業ごとのアルバムに自動整理！</h3>
+              <p class="shot__desc">便利なメモとアルバム管理で、完璧に整理。「授業名 ＞ 第〇回」で並ぶので、開くだけで即・振り返りができます。</p>
+              <ul class="shot__points">
+                <li>授業ごとの自動フォルダー分け</li>
+                <li>写真にメモを追加できる</li>
+              </ul>
+            </div>
+            <div class="shot__visual">
+              <div class="phone" aria-hidden="true">
+                <div class="phone__screen">
+                  <div class="screen-head"><span>‹ Back</span><span>クラスフォルダー</span></div>
+                  <div class="phone__card">
+                    <div class="phone__card-title">物理IIB（水曜4限）<br><small>2024/04/01 – 2024/07/31</small></div>
+                    <div class="phone__thumbs">
+                      <div class="phone__thumb"></div><div class="phone__thumb"></div><div class="phone__thumb"></div>
+                      <div class="phone__thumb"></div><div class="phone__thumb"></div><div class="phone__thumb"></div>
+                    </div>
+                  </div>
+                  <span class="bubble">メモを追加！</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 便利な理由（機能カード） -->
+    <section class="section section--soft" id="reasons">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">コマフォトが圧倒的に便利な理由</h2>
+          <p class="section__lead">時間割・写真自動整理アプリで、勉強前のムダ時間をゼロに。</p>
         </div>
 
         <div class="features">
           <article class="feature">
             <div class="feature__icon">🗂️</div>
-            <h3 class="feature__title">時間割ベースで自動仕分け</h3>
-            <p class="feature__text">登録した時間割をもとに、撮影した写真を授業ごとのコマへ自動で振り分け。手作業の整理は不要です。</p>
+            <h3 class="feature__title">時間割を入れるだけ、あとは全自動</h3>
+            <p class="feature__text">履修スケジュールを登録しておけば、授業中に撮るだけ。「月曜1限＝〇〇の講義」と撮影時間をマッチングし、対象の授業フォルダへ全自動で振り分けます。</p>
           </article>
 
           <article class="feature">
-            <div class="feature__icon">📚</div>
-            <h3 class="feature__title">授業ごとにすっきり整理</h3>
-            <p class="feature__text">教科・コマ単位でまとまるので、復習やテスト前に「あの板書」をすぐに見つけられます。</p>
+            <div class="feature__icon">🧹</div>
+            <h3 class="feature__title">カメラロールが汚れない</h3>
+            <p class="feature__text">板書やスライド画像だけを、スマホ本体のアルバムから隔離してアプリ内に保存・整理。友達との思い出の写真が黒板写真で埋もれません。<small>（※一部有料機能）</small></p>
+          </article>
+
+          <article class="feature">
+            <div class="feature__icon">⏱️</div>
+            <h3 class="feature__title">テスト前・レポート時に一瞬で振り返り</h3>
+            <p class="feature__text">「授業名 ＞ 第〇回」と綺麗に整理された状態なので、アプリを開くだけで即・復習スタート。過去問やノート、プリントの管理にも最適です。</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature__icon">🔢</div>
+            <h3 class="feature__title">「第N回」を自動付与</h3>
+            <p class="feature__text">初回授業日を設定しておけば、撮影日から講義の回数を自動で判定。何回目の授業かまで自動で整理されます。</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature__icon">👆</div>
+            <h3 class="feature__title">不要な写真はスワイプで即削除</h3>
+            <p class="feature__text">ピンボケや重複した板書写真は、スワイプでサッと削除。必要な板書だけを残して、いつでもすっきり保てます。</p>
           </article>
 
           <article class="feature">
             <div class="feature__icon">🔒</div>
-            <h3 class="feature__title">すべて端末内で処理</h3>
-            <p class="feature__text">写真の解析・整理・表示は端末内のみで完結。写真や情報を外部サーバーへ送信することは一切ありません。</p>
-          </article>
-
-          <article class="feature">
-            <div class="feature__icon">🗓️</div>
-            <h3 class="feature__title">学期・補講・テスト範囲も管理</h3>
-            <p class="feature__text">学期やコマ、補講、テスト範囲などの設定にも対応。あなたの時間割にぴったり合わせられます。</p>
-          </article>
-
-          <article class="feature">
-            <div class="feature__icon">💾</div>
-            <h3 class="feature__title">アプリ内に保存（任意）</h3>
-            <p class="feature__text">必要な写真はアプリ専用領域にコピーして保存可能。このコピーも端末外には送信されません。</p>
-          </article>
-
-          <article class="feature">
-            <div class="feature__icon">⚡</div>
-            <h3 class="feature__title">撮るだけ、あとはおまかせ</h3>
-            <p class="feature__text">授業中はシャッターを押すだけ。仕分けはコマフォトが自動で行うので、授業に集中できます。</p>
+            <h3 class="feature__title">処理はすべて端末内で完結</h3>
+            <p class="feature__text">写真の解析・整理・表示は端末内のみで実行。写真や情報を開発者や第三者のサーバーへ送信することは一切ありません。</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- 使い方ステップ -->
-    <section class="section section--soft" id="steps">
+    <section class="section" id="steps">
       <div class="container">
         <div class="section__head">
           <h2 class="section__title">使い方は3ステップ</h2>
@@ -143,7 +280,7 @@
           <div class="step">
             <div class="step__num">1</div>
             <h3 class="step__title">時間割を登録</h3>
-            <p class="step__text">学期や曜日・コマに合わせて、自分の時間割を登録します。</p>
+            <p class="step__text">大学の履修スケジュールに合わせて、自分の時間割を登録します。</p>
           </div>
           <div class="step">
             <div class="step__num">2</div>
@@ -153,7 +290,44 @@
           <div class="step">
             <div class="step__num">3</div>
             <h3 class="step__title">自動で整理</h3>
-            <p class="step__text">時間割に基づき、写真が授業ごとに自動で仕分けされます。</p>
+            <p class="step__text">撮影時間と時間割をマッチングし、授業・回数ごとに自動で仕分け。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- こんな人におすすめ -->
+    <section class="section section--soft" id="recommend">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">こんな大学生・学生におすすめ</h2>
+          <p class="section__lead">ひとつでも当てはまったら、コマフォトの出番です。</p>
+        </div>
+
+        <div class="recommend">
+          <div class="recommend__item">
+            <span class="recommend__check">✓</span>
+            <p class="recommend__text">試験前に写真フォルダを何分もスクロールして、板書を探している人</p>
+          </div>
+          <div class="recommend__item">
+            <span class="recommend__check">✓</span>
+            <p class="recommend__text">教授の板書やスライド、ホワイトボードをとりあえず撮って満足してしまう人</p>
+          </div>
+          <div class="recommend__item">
+            <span class="recommend__check">✓</span>
+            <p class="recommend__text">ノートを取るのが苦手で、スマホのカメラ写真に頼っている人</p>
+          </div>
+          <div class="recommend__item">
+            <span class="recommend__check">✓</span>
+            <p class="recommend__text">タイパ重視で単位を揃えたい、落単を回避したい人</p>
+          </div>
+          <div class="recommend__item">
+            <span class="recommend__check">✓</span>
+            <p class="recommend__text">新入生・大学1年生で、大学の講義の勉強方法に迷っている人</p>
+          </div>
+          <div class="recommend__item">
+            <span class="recommend__check">✓</span>
+            <p class="recommend__text">テスト勉強・過去問対策のタイパ（効率化）を圧倒的に向上させたい人</p>
           </div>
         </div>
       </div>
@@ -164,26 +338,38 @@
       <div class="container download__inner">
         <div class="section__head">
           <h2 class="section__title">今すぐ始めよう</h2>
-          <p class="section__lead">コマフォトをダウンロードして、板書整理から解放されましょう。</p>
+          <p class="section__lead">「よし、テスト勉強をはじめよう！」を、写真探しで止めないために。</p>
         </div>
 
-        <!-- TODO: href を実際のストアURLに差し替えてください -->
+        <div class="store-meta">
+          <div class="store-meta__item">
+            <div class="store-meta__value">★ 5.0</div>
+            <div class="store-meta__label">評価</div>
+          </div>
+          <div class="store-meta__item">
+            <div class="store-meta__value">無料</div>
+            <div class="store-meta__label">アプリ内購入あり</div>
+          </div>
+          <div class="store-meta__item">
+            <div class="store-meta__value">4+</div>
+            <div class="store-meta__label">年齢</div>
+          </div>
+          <div class="store-meta__item">
+            <div class="store-meta__value">教育</div>
+            <div class="store-meta__label">カテゴリ</div>
+          </div>
+        </div>
+
         <div class="store-buttons">
-          <a class="store-btn" href="#" aria-label="App Store でダウンロード">
+          <a class="store-btn" href="https://apps.apple.com/jp/app/id6779217541" target="_blank" rel="noopener" aria-label="App Store でダウンロード">
             <span class="store-btn__icon"></span>
             <span class="store-btn__label">
               <span class="store-btn__small">Download on the</span>
               <span class="store-btn__big">App Store</span>
             </span>
           </a>
-          <a class="store-btn" href="#" aria-label="Google Play で手に入れよう">
-            <span class="store-btn__icon">▶</span>
-            <span class="store-btn__label">
-              <span class="store-btn__small">GET IT ON</span>
-              <span class="store-btn__big">Google Play</span>
-            </span>
-          </a>
         </div>
+        <p class="hero__note" style="margin-top:20px;">iPhone・iPad に対応しています（macOSでは検証されていません）。</p>
       </div>
     </section>
 
@@ -194,11 +380,11 @@
     <div class="container footer__inner">
       <div class="footer__brand">コマフォト</div>
       <ul class="footer__links">
-        <li><a href="#features">機能</a></li>
-        <li><a href="#download">ダウンロード</a></li>
+        <li><a href="#features">特長</a></li>
+        <li><a href="https://apps.apple.com/jp/app/id6779217541" target="_blank" rel="noopener">App Store</a></li>
         <li><a href="privacy.html">プライバシーポリシー</a></li>
       </ul>
-      <p class="footer__copy">© 2026 コマフォト. All rights reserved.</p>
+      <p class="footer__copy">© 2026 広大アプリを作ろうの会 / コマフォト. All rights reserved.</p>
     </div>
   </footer>
 
