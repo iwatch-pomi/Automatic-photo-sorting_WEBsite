@@ -1151,6 +1151,13 @@ img {
   font-size: 0.7rem;
 }
 
+/* 実スクリーンショット画像（端末フレーム内に表示） */
+.phone-shot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* 下部タブバー */
 .tabbar {
   display: flex;
