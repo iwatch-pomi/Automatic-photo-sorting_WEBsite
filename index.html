@@ -12,6 +12,16 @@
 </head>
 <body>
 
+  <!-- オンボーディング診断（アクセス時にまず表示） -->
+  <div class="ob" id="ob" role="dialog" aria-modal="true" aria-label="コマフォト 無料診断">
+    <div class="ob__bar"><div class="ob__bar-fill" id="obBarFill"></div></div>
+    <div class="ob__top">
+      <span class="ob__brand">🎓 コマフォト 2分診断</span>
+      <button class="ob__skip" id="obSkip" type="button">スキップ ›</button>
+    </div>
+    <div class="ob__main" id="obMain"></div>
+  </div>
+
   <!-- 最上部の告知バー -->
   <div class="announce">
     🎉 今だけ！コマフォト Pro が<strong>1ヶ月無料</strong> ―
@@ -59,7 +69,7 @@
             テスト前の「あの板書、どこだっけ？」を完全にゼロに。
           </p>
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#download">App Storeで無料ダウンロード</a>
+            <button class="btn btn--primary" type="button" data-ob-open>▶ 2分であなた専用プランを無料診断</button>
             <a class="btn btn--ghost" href="#features">特長を見る</a>
           </div>
           <p class="hero__note">無料・アプリ内購入あり／写真の解析・整理はすべて端末内で完結します。</p>
@@ -440,5 +450,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/onboarding.js"></script>
 </body>
 </html>

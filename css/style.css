@@ -1538,3 +1538,338 @@ body {
   overflow-x: hidden;
   width: 100%;
 }
+
+/* =========================================================
+   オンボーディング診断（Cal AI 風の事前入力フロー）
+   ========================================================= */
+body.ob-lock {
+  overflow: hidden;
+}
+
+.ob {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: linear-gradient(165deg, #eaf3ee 0%, #ffffff 55%);
+  display: none;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.ob.is-open {
+  display: flex;
+}
+
+.ob__bar {
+  height: 6px;
+  background: #dfeae3;
+  flex-shrink: 0;
+}
+
+.ob__bar-fill {
+  height: 100%;
+  width: 0;
+  background: var(--color-primary);
+  transition: width 0.35s ease;
+}
+
+.ob__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  flex-shrink: 0;
+}
+
+.ob__brand {
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  font-size: 0.98rem;
+}
+
+.ob__skip {
+  background: none;
+  border: 0;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.ob__skip:hover {
+  color: var(--color-primary-dark);
+}
+
+.ob__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 20px 56px;
+}
+
+.ob__inner {
+  width: 100%;
+  max-width: 560px;
+  animation: ob-fade 0.35s ease;
+}
+
+@keyframes ob-fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ob__step {
+  text-align: center;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.82rem;
+  margin-bottom: 12px;
+}
+
+.ob__q {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  line-height: 1.45;
+  margin: 0 0 28px;
+}
+
+.ob__options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ob__opt {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  text-align: left;
+  background: #fff;
+  border: 2px solid var(--color-border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
+}
+
+.ob__opt:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.ob__opt.is-selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.ob__opt-emoji {
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.ob__back {
+  display: block;
+  margin: 22px auto 0;
+  background: none;
+  border: 0;
+  color: var(--color-muted);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ローディング */
+.ob__loading {
+  text-align: center;
+  max-width: 460px;
+}
+
+.ob__spinner {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 6px solid #dfeae3;
+  border-top-color: var(--color-primary);
+  margin: 0 auto 28px;
+  animation: ob-spin 0.9s linear infinite;
+}
+
+@keyframes ob-spin {
+  to { transform: rotate(360deg); }
+}
+
+.ob__loading-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  margin: 0 0 10px;
+}
+
+.ob__loading-msg {
+  color: var(--color-text);
+  min-height: 1.6em;
+  font-weight: 600;
+}
+
+.ob__loading-track {
+  height: 8px;
+  background: #dfeae3;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 24px;
+}
+
+.ob__loading-fill {
+  height: 100%;
+  width: 0;
+  background: var(--color-primary);
+  transition: width 0.4s ease;
+}
+
+/* 結果 */
+.ob__result {
+  width: 100%;
+  max-width: 560px;
+  text-align: center;
+}
+
+.ob__result-badge {
+  display: inline-block;
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+  font-weight: 800;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+}
+
+.ob__result-title {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: var(--color-primary-dark);
+  margin: 0 0 18px;
+  line-height: 1.4;
+}
+
+.ob__stat {
+  background: linear-gradient(135deg, #2f7d5c, #20503c);
+  color: #fff;
+  border-radius: 16px;
+  padding: 24px 20px;
+  margin: 0 0 20px;
+}
+
+.ob__stat-label {
+  font-size: 0.9rem;
+  opacity: 0.92;
+}
+
+.ob__stat-num {
+  font-size: 2.6rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 4px 0;
+}
+
+.ob__stat-num span {
+  color: #ffe07a;
+}
+
+.ob__stat-sub {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.ob__card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin-bottom: 22px;
+  text-align: left;
+}
+
+.ob__card h4 {
+  margin: 0 0 10px;
+  color: var(--color-primary-dark);
+}
+
+.ob__card ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.ob__card li {
+  margin-bottom: 6px;
+  font-size: 0.96rem;
+}
+
+.ob__offer-tag {
+  display: inline-block;
+  background: #ffd54a;
+  color: #4a3a00;
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.ob__cta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ob__cta .btn {
+  width: 100%;
+  justify-content: center;
+  font-size: 1.05rem;
+}
+
+.ob__cta .btn--code {
+  background: #ffd54a;
+  color: #4a3500;
+  font-weight: 900;
+}
+
+.ob__cta .btn--code:hover {
+  background: #ffca28;
+}
+
+.ob__close {
+  display: block;
+  margin: 18px auto 0;
+  background: none;
+  border: 0;
+  color: var(--color-muted);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .ob__q {
+    font-size: 1.25rem;
+  }
+
+  .ob__opt {
+    font-size: 0.96rem;
+    padding: 14px 16px;
+  }
+
+  .ob__result-title {
+    font-size: 1.4rem;
+  }
+
+  .ob__stat-num {
+    font-size: 2.1rem;
+  }
+}
