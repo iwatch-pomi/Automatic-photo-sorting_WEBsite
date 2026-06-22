@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コマフォト｜板書写真を時間割で自動仕分け</title>
+  <meta name="description" content="コマフォトは、授業中に撮影した板書などの写真を、登録した時間割に基づいて授業ごとに自動で整理する学生向けアプリ。処理はすべて端末内で完結し、プライバシーも安心です。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ヘッダー / ナビ -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="nav__logo">
+        <svg class="nav__logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="3" y="7" width="26" height="20" rx="4" fill="#2f7d5c"/>
+          <circle cx="16" cy="17" r="6" fill="#eaf3ee"/>
+          <circle cx="16" cy="17" r="3" fill="#2f7d5c"/>
+          <rect x="11" y="4" width="10" height="5" rx="2" fill="#285f49"/>
+        </svg>
+        コマフォト
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a class="nav__link" href="#features">機能</a></li>
+        <li><a class="nav__link" href="#steps">使い方</a></li>
+        <li><a class="nav__link" href="#download">ダウンロード</a></li>
+        <li><a class="btn btn--primary" href="#download">無料で始める</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ヒーロー -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <span class="hero__badge">📸 授業の板書写真を自動整理</span>
+          <h1 class="hero__title">板書写真を、<br><em>時間割で自動仕分け。</em></h1>
+          <p class="hero__desc">
+            コマフォトは、授業中に撮影した板書などの写真を、登録した時間割に基づいて
+            授業ごとに自動で整理する学生向けアプリです。撮るだけで、あとはおまかせ。
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#download">無料でダウンロード</a>
+            <a class="btn btn--ghost" href="#features">機能を見る</a>
+          </div>
+          <p class="hero__note">写真の解析・整理はすべて端末内で完結。外部への送信は一切ありません。</p>
+        </div>
+
+        <div class="hero__visual">
+          <!-- アプリ画面モック（後で assets/ の実スクショに差し替え可） -->
+          <div class="phone" aria-hidden="true">
+            <div class="phone__screen">
+              <div class="phone__bar"></div>
+              <div class="phone__card">
+                <div class="phone__card-title">月曜 1限・数学</div>
+                <div class="phone__thumbs">
+                  <div class="phone__thumb"></div><div class="phone__thumb"></div><div class="phone__thumb"></div>
+                </div>
+              </div>
+              <div class="phone__card">
+                <div class="phone__card-title">月曜 2限・英語</div>
+                <div class="phone__thumbs">
+                  <div class="phone__thumb"></div><div class="phone__thumb"></div><div class="phone__thumb"></div>
+                </div>
+              </div>
+              <div class="phone__card">
+                <div class="phone__card-title">月曜 3限・物理</div>
+                <div class="phone__thumbs">
+                  <div class="phone__thumb"></div><div class="phone__thumb"></div><div class="phone__thumb"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 機能紹介 -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">主な機能</h2>
+          <p class="section__lead">板書の整理にかかる手間を、コマフォトがまるごと引き受けます。</p>
+        </div>
+
+        <div class="features">
+          <article class="feature">
+            <div class="feature__icon">🗂️</div>
+            <h3 class="feature__title">時間割ベースで自動仕分け</h3>
+            <p class="feature__text">登録した時間割をもとに、撮影した写真を授業ごとのコマへ自動で振り分け。手作業の整理は不要です。</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature__icon">📚</div>
+            <h3 class="feature__title">授業ごとにすっきり整理</h3>
+            <p class="feature__text">教科・コマ単位でまとまるので、復習やテスト前に「あの板書」をすぐに見つけられます。</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature__icon">🔒</div>
+            <h3 class="feature__title">すべて端末内で処理</h3>
+            <p class="feature__text">写真の解析・整理・表示は端末内のみで完結。写真や情報を外部サーバーへ送信することは一切ありません。</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature__icon">🗓️</div>
+            <h3 class="feature__title">学期・補講・テスト範囲も管理</h3>
+            <p class="feature__text">学期やコマ、補講、テスト範囲などの設定にも対応。あなたの時間割にぴったり合わせられます。</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature__icon">💾</div>
+            <h3 class="feature__title">アプリ内に保存（任意）</h3>
+            <p class="feature__text">必要な写真はアプリ専用領域にコピーして保存可能。このコピーも端末外には送信されません。</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature__icon">⚡</div>
+            <h3 class="feature__title">撮るだけ、あとはおまかせ</h3>
+            <p class="feature__text">授業中はシャッターを押すだけ。仕分けはコマフォトが自動で行うので、授業に集中できます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 使い方ステップ -->
+    <section class="section section--soft" id="steps">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">使い方は3ステップ</h2>
+          <p class="section__lead">むずかしい設定は不要。すぐに使い始められます。</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step__num">1</div>
+            <h3 class="step__title">時間割を登録</h3>
+            <p class="step__text">学期や曜日・コマに合わせて、自分の時間割を登録します。</p>
+          </div>
+          <div class="step">
+            <div class="step__num">2</div>
+            <h3 class="step__title">板書を撮影</h3>
+            <p class="step__text">授業中、いつものカメラで板書をパシャッと撮るだけ。</p>
+          </div>
+          <div class="step">
+            <div class="step__num">3</div>
+            <h3 class="step__title">自動で整理</h3>
+            <p class="step__text">時間割に基づき、写真が授業ごとに自動で仕分けされます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ダウンロード -->
+    <section class="section" id="download">
+      <div class="container download__inner">
+        <div class="section__head">
+          <h2 class="section__title">今すぐ始めよう</h2>
+          <p class="section__lead">コマフォトをダウンロードして、板書整理から解放されましょう。</p>
+        </div>
+
+        <!-- TODO: href を実際のストアURLに差し替えてください -->
+        <div class="store-buttons">
+          <a class="store-btn" href="#" aria-label="App Store でダウンロード">
+            <span class="store-btn__icon"></span>
+            <span class="store-btn__label">
+              <span class="store-btn__small">Download on the</span>
+              <span class="store-btn__big">App Store</span>
+            </span>
+          </a>
+          <a class="store-btn" href="#" aria-label="Google Play で手に入れよう">
+            <span class="store-btn__icon">▶</span>
+            <span class="store-btn__label">
+              <span class="store-btn__small">GET IT ON</span>
+              <span class="store-btn__big">Google Play</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">コマフォト</div>
+      <ul class="footer__links">
+        <li><a href="#features">機能</a></li>
+        <li><a href="#download">ダウンロード</a></li>
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+      </ul>
+      <p class="footer__copy">© 2026 コマフォト. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
