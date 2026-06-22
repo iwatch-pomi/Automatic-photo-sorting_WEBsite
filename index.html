@@ -33,6 +33,7 @@
         <li><a class="nav__link" href="#features">特長</a></li>
         <li><a class="nav__link" href="#reasons">便利な理由</a></li>
         <li><a class="nav__link" href="#recommend">おすすめ</a></li>
+        <li><a class="nav__link" href="#pricing">料金</a></li>
         <li><a class="btn btn--primary" href="#download">App Storeで入手</a></li>
       </ul>
     </div>
@@ -59,27 +60,42 @@
         </div>
 
         <div class="hero__visual">
-          <!-- アプリ画面モック（App Storeの実スクショに差し替え可: assets/screen-*.png） -->
+          <!-- アプリのホーム画面風モック（実アプリUIを参考・内容は一般化） -->
           <div class="phone" aria-hidden="true">
-            <div class="phone__screen">
-              <div class="phone__bar"></div>
-              <div class="phone__card">
-                <div class="phone__card-title">月曜 1限・英語</div>
-                <div class="phone__thumbs">
-                  <div class="phone__thumb"></div><div class="phone__thumb"></div><div class="phone__thumb"></div>
+            <div class="appscreen">
+              <div class="appscreen__body">
+                <div class="app-status"><span>15:16</span><span>● ● ●</span></div>
+                <div class="app-title">コマフォト</div>
+                <div class="app-h">今日の授業 <small>Mon, Jun 22</small></div>
+                <div class="today">
+                  <div class="today__card">
+                    <div class="today__time">10:45 - 12:00</div>
+                    <div class="today__name">経済学</div>
+                    <div class="today__room">(201)</div>
+                  </div>
+                  <div class="today__card">
+                    <div class="today__time">13:00 - 14:30</div>
+                    <div class="today__name">英語</div>
+                    <div class="today__room">(305)</div>
+                  </div>
+                </div>
+                <div class="app-h">最近同期された授業アルバム</div>
+                <div class="albums2">
+                  <div class="album2">
+                    <div class="album2__img"><span class="l">6月22日</span><span class="r">🖼 12</span></div>
+                    <div class="album2__name">経済学</div>
+                  </div>
+                  <div class="album2">
+                    <div class="album2__img"><span class="l">6月17日</span><span class="r">🖼 4</span></div>
+                    <div class="album2__name">英語</div>
+                  </div>
                 </div>
               </div>
-              <div class="phone__card">
-                <div class="phone__card-title">月曜 2限・数学</div>
-                <div class="phone__thumbs">
-                  <div class="phone__thumb"></div><div class="phone__thumb"></div><div class="phone__thumb"></div>
-                </div>
-              </div>
-              <div class="phone__card">
-                <div class="phone__card-title">水曜 3限・地理</div>
-                <div class="phone__thumbs">
-                  <div class="phone__thumb"></div><div class="phone__thumb"></div><div class="phone__thumb"></div>
-                </div>
+              <div class="tabbar">
+                <div class="tabbar__item is-active"><span class="tabbar__ico">🏠</span>ホーム</div>
+                <div class="tabbar__item"><span class="tabbar__ico">🗓</span>時間割</div>
+                <div class="tabbar__item"><span class="tabbar__ico">🖼</span>アルバム</div>
+                <div class="tabbar__item"><span class="tabbar__ico">⚙️</span>設定</div>
               </div>
             </div>
           </div>
@@ -90,8 +106,8 @@
     <!-- キャンペーン告知 -->
     <section class="campaign">
       <div class="container campaign__inner">
-        <span class="campaign__tag">CAMPAIGN</span>
-        <p class="campaign__text">リリースキャンペーン中！<strong>Pro版が2ヶ月無料</strong>＋各プランに<strong>7日間の無料トライアル</strong></p>
+        <span class="campaign__tag">🎉 今だけ</span>
+        <p class="campaign__text">アプリリリース記念！SNSで「#コマフォト」を付けて紹介投稿すると<strong>Pro 2ヶ月分が無料</strong>に。さらに各プランは<strong>7日間無料でお試し</strong>できます。</p>
       </div>
     </section>
 
@@ -118,15 +134,31 @@
             </div>
             <div class="shot__visual">
               <div class="phone" aria-hidden="true">
-                <div class="phone__screen">
-                  <div class="screen-head"><span>時間割と連動</span><span>月 火 水 木 金</span></div>
-                  <div class="tt-grid">
-                    <div class="tt-cell is-en">英語</div><div class="tt-cell"></div><div class="tt-cell"></div><div class="tt-cell"></div><div class="tt-cell is-math">数学</div>
-                    <div class="tt-cell"></div><div class="tt-cell is-math">数学</div><div class="tt-cell"></div><div class="tt-cell is-geo">地理</div><div class="tt-cell"></div>
-                    <div class="tt-cell is-math">数学</div><div class="tt-cell is-geo">地理</div><div class="tt-cell is-exp">実験</div><div class="tt-cell"></div><div class="tt-cell is-exp">実験</div>
-                    <div class="tt-cell"></div><div class="tt-cell"></div><div class="tt-cell is-en">英語</div><div class="tt-cell"></div><div class="tt-cell"></div>
+                <div class="appscreen">
+                  <div class="appscreen__body">
+                    <div class="app-status"><span>15:16</span><span>● ● ●</span></div>
+                    <div class="app-title">時間割</div>
+                    <div class="tt2__tabs">
+                      <span class="tt2__tab">全期間</span>
+                      <span class="tt2__tab">1T</span>
+                      <span class="tt2__tab is-active">2T</span>
+                      <span class="tt2__tab">3T</span>
+                      <span class="tt2__tab">4T</span>
+                    </div>
+                    <div class="tt2">
+                      <span class="h"></span><span class="h">月</span><span class="h">火</span><span class="h">水</span><span class="h">木</span><span class="h">金</span>
+                      <span class="h">1</span><span class="cell"></span><span class="cell"></span><span class="cell bl">統計学</span><span class="cell"></span><span class="cell"></span>
+                      <span class="h">2</span><span class="cell en">経済学</span><span class="cell gr">心理学</span><span class="cell en">経済学</span><span class="cell gr">心理学</span><span class="cell bl">統計学</span>
+                      <span class="h">3</span><span class="cell yl">英語</span><span class="cell"></span><span class="cell pp">物理学</span><span class="cell yl">英語</span><span class="cell yl">英語</span>
+                      <span class="h">4</span><span class="cell"></span><span class="cell pp">物理学</span><span class="cell"></span><span class="cell"></span><span class="cell"></span>
+                    </div>
                   </div>
-                  <span class="bubble">このアプリで一瞬！</span>
+                  <div class="tabbar">
+                    <div class="tabbar__item"><span class="tabbar__ico">🏠</span>ホーム</div>
+                    <div class="tabbar__item is-active"><span class="tabbar__ico">🗓</span>時間割</div>
+                    <div class="tabbar__item"><span class="tabbar__ico">🖼</span>アルバム</div>
+                    <div class="tabbar__item"><span class="tabbar__ico">⚙️</span>設定</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -146,13 +178,22 @@
             </div>
             <div class="shot__visual">
               <div class="phone" aria-hidden="true">
-                <div class="phone__screen">
-                  <div class="screen-head"><span>キャンセル</span><span>授業を追加　保存</span></div>
-                  <div class="set-row"><span>初回授業日を設定</span><span class="toggle"></span></div>
-                  <div class="set-row"><span>第N回を自動付与</span><span class="toggle"></span></div>
-                  <div class="set-row"><span>写真をアプリ内に保存</span><span class="toggle"></span></div>
-                  <div class="set-row"><span>曜日・コマを選択</span><span class="toggle"></span></div>
-                  <span class="bubble">ストレージ節約も！</span>
+                <div class="appscreen">
+                  <div class="appscreen__body app-form">
+                    <div class="app-status"><span>13:32</span><span>● ● ●</span></div>
+                    <div class="app-h" style="font-weight:700;color:#6a746c;font-size:0.66rem;"><span>‹ キャンセル</span><span>授業を追加</span><span>保存</span></div>
+                    <div class="set-row"><span>初回授業日を設定</span><span class="toggle"></span></div>
+                    <div class="set-row"><span>第N回を自動付与</span><span class="toggle"></span></div>
+                    <div class="set-row"><span>写真をアプリ内に保存</span><span class="toggle"></span></div>
+                    <div class="set-row"><span>曜日（複数選択可）</span><span class="toggle"></span></div>
+                    <div class="set-row"><span>コマ（連続コマも選択可）</span><span class="toggle"></span></div>
+                  </div>
+                  <div class="tabbar">
+                    <div class="tabbar__item"><span class="tabbar__ico">🏠</span>ホーム</div>
+                    <div class="tabbar__item is-active"><span class="tabbar__ico">🗓</span>時間割</div>
+                    <div class="tabbar__item"><span class="tabbar__ico">🖼</span>アルバム</div>
+                    <div class="tabbar__item"><span class="tabbar__ico">⚙️</span>設定</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -171,18 +212,36 @@
             </div>
             <div class="shot__visual">
               <div class="phone" aria-hidden="true">
-                <div class="phone__screen">
-                  <div class="screen-head"><span>‹ Back</span><span>英語</span></div>
-                  <div class="folder-row">英語 <span>›</span></div>
-                  <div class="folder-row">数学 <span>›</span></div>
-                  <div class="folder-row">地理 <span>›</span></div>
-                  <div class="phone__card" style="margin-top:12px;">
-                    <div class="phone__card-title">第1回（6月1日）／ 第2回（6月8日）</div>
-                    <div class="phone__thumbs">
-                      <div class="phone__thumb"></div><div class="phone__thumb"></div><div class="phone__thumb"></div>
+                <div class="appscreen">
+                  <div class="appscreen__body">
+                    <div class="app-status"><span>15:16</span><span>● ● ●</span></div>
+                    <div class="app-title">ホーム</div>
+                    <div class="app-h">最近同期された授業アルバム</div>
+                    <div class="albums2">
+                      <div class="album2">
+                        <div class="album2__img"><span class="l">6月22日</span><span class="r">🖼 70</span></div>
+                        <div class="album2__name">経済学</div>
+                      </div>
+                      <div class="album2">
+                        <div class="album2__img"><span class="l">6月17日</span><span class="r">🖼 2</span></div>
+                        <div class="album2__name">英語</div>
+                      </div>
+                      <div class="album2">
+                        <div class="album2__img"><span class="l">6月10日</span><span class="r">🖼 1</span></div>
+                        <div class="album2__name">物理学</div>
+                      </div>
+                      <div class="album2">
+                        <div class="album2__img"><span class="l">6月10日</span><span class="r">🖼 1</span></div>
+                        <div class="album2__name">統計学</div>
+                      </div>
                     </div>
                   </div>
-                  <span class="bubble">不要な写真はスワイプで即削除！</span>
+                  <div class="tabbar">
+                    <div class="tabbar__item is-active"><span class="tabbar__ico">🏠</span>ホーム</div>
+                    <div class="tabbar__item"><span class="tabbar__ico">🗓</span>時間割</div>
+                    <div class="tabbar__item"><span class="tabbar__ico">🖼</span>アルバム</div>
+                    <div class="tabbar__item"><span class="tabbar__ico">⚙️</span>設定</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -201,16 +260,47 @@
             </div>
             <div class="shot__visual">
               <div class="phone" aria-hidden="true">
-                <div class="phone__screen">
-                  <div class="screen-head"><span>‹ Back</span><span>クラスフォルダー</span></div>
-                  <div class="phone__card">
-                    <div class="phone__card-title">物理IIB（水曜4限）<br><small>2024/04/01 – 2024/07/31</small></div>
-                    <div class="phone__thumbs">
-                      <div class="phone__thumb"></div><div class="phone__thumb"></div><div class="phone__thumb"></div>
-                      <div class="phone__thumb"></div><div class="phone__thumb"></div><div class="phone__thumb"></div>
+                <div class="appscreen">
+                  <div class="appscreen__body">
+                    <div class="app-status"><span>15:16</span><span>● ● ●</span></div>
+                    <div class="app-title">授業アルバム</div>
+                    <div class="tt2__tabs">
+                      <span class="tt2__tab">全期間</span>
+                      <span class="tt2__tab">1T</span>
+                      <span class="tt2__tab is-active">2T</span>
+                      <span class="tt2__tab">3T</span>
+                    </div>
+                    <div class="alist__row">
+                      <div class="alist__thumb"></div>
+                      <div>
+                        <div class="alist__name">統計学</div>
+                        <div class="alist__meta">水・金　🖼 1枚　📁 1回分</div>
+                      </div>
+                      <span>›</span>
+                    </div>
+                    <div class="alist__row">
+                      <div class="alist__thumb"></div>
+                      <div>
+                        <div class="alist__name">英語</div>
+                        <div class="alist__meta">火・水　🖼 2枚　📁 2回分</div>
+                      </div>
+                      <span>›</span>
+                    </div>
+                    <div class="alist__row">
+                      <div class="alist__thumb"></div>
+                      <div>
+                        <div class="alist__name">経済学</div>
+                        <div class="alist__meta">月・木・金　🖼 72枚　📁 26回分</div>
+                      </div>
+                      <span>›</span>
                     </div>
                   </div>
-                  <span class="bubble">メモを追加！</span>
+                  <div class="tabbar">
+                    <div class="tabbar__item"><span class="tabbar__ico">🏠</span>ホーム</div>
+                    <div class="tabbar__item"><span class="tabbar__ico">🗓</span>時間割</div>
+                    <div class="tabbar__item is-active"><span class="tabbar__ico">🖼</span>アルバム</div>
+                    <div class="tabbar__item"><span class="tabbar__ico">⚙️</span>設定</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -333,8 +423,64 @@
       </div>
     </section>
 
+    <!-- 料金プラン（コマフォト Pro） -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">コマフォト Pro</h2>
+          <p class="section__lead">基本機能は無料。Proで授業写真をもっとスマートに管理できます。</p>
+        </div>
+
+        <div class="pro-features">
+          <div class="pro-feature">写真・PDF の書き出し</div>
+          <div class="pro-feature">写真をアプリ内に保存</div>
+          <div class="pro-feature">授業回のカスタム名称</div>
+          <div class="pro-feature">テスト範囲マーカー</div>
+          <div class="pro-feature">複数学期の管理</div>
+          <div class="pro-feature">写真の自動マッチング・閲覧</div>
+        </div>
+
+        <div class="plans">
+          <div class="plan">
+            <div class="plan__name">月額</div>
+            <div class="plan__price">¥400</div>
+            <div class="plan__per">／月</div>
+            <div class="plan__note">7日間無料でお試し</div>
+          </div>
+          <div class="plan">
+            <div class="plan__badge">13%お得</div>
+            <div class="plan__name">2ヶ月</div>
+            <div class="plan__price">¥700</div>
+            <div class="plan__per">¥350／月</div>
+            <div class="plan__note">7日間無料でお試し</div>
+          </div>
+          <div class="plan is-best">
+            <div class="plan__badge">25%お得</div>
+            <div class="plan__name">学期（6ヶ月）</div>
+            <div class="plan__price">¥1,800</div>
+            <div class="plan__per">¥300／月</div>
+            <div class="plan__note">7日間無料でお試し</div>
+          </div>
+          <div class="plan">
+            <div class="plan__badge">38%お得 🎉</div>
+            <div class="plan__name">年間</div>
+            <div class="plan__price">¥3,000</div>
+            <div class="plan__per">¥250／月</div>
+            <div class="plan__note">7日間無料でお試し</div>
+          </div>
+        </div>
+
+        <p class="pro-disclaimer">
+          コマフォト Pro は自動更新サブスクリプションです。各プランとも初回7日間は無料でお試しいただけます
+          （無料トライアルの対象は初めてご利用の方のみ）。無料期間中に解約しない限り、無料期間の終了時に
+          選択したプランの料金が Apple ID に請求され、期間終了の24時間以上前に自動更新をオフにしない限り、
+          同じ期間・同じ料金で自動更新されます。価格は変更される場合があります。最新の情報は App Store をご確認ください。
+        </p>
+      </div>
+    </section>
+
     <!-- ダウンロード -->
-    <section class="section" id="download">
+    <section class="section section--soft" id="download">
       <div class="container download__inner">
         <div class="section__head">
           <h2 class="section__title">今すぐ始めよう</h2>

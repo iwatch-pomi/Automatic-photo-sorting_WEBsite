@@ -933,3 +933,373 @@ img {
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================================================
+   アプリ画面風モック（実アプリUIを参考・内容は一般化）
+   ベージュ背景＋緑アクセント＋下部タブバー
+   ========================================================= */
+.appscreen {
+  --app-bg: #f1ece1;
+  --app-green: #2d5a3d;
+  background: var(--app-bg);
+  min-height: 444px;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7rem;
+  color: #3a4a43;
+}
+
+.appscreen__body {
+  flex: 1;
+  padding: 14px 12px 8px;
+  overflow: hidden;
+}
+
+.app-status {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #4a4a4a;
+  padding: 2px 4px 10px;
+}
+
+.app-title {
+  text-align: center;
+  font-weight: 800;
+  color: var(--app-green);
+  font-size: 0.86rem;
+  margin-bottom: 14px;
+}
+
+.app-h {
+  font-weight: 800;
+  font-size: 0.8rem;
+  margin: 0 0 9px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.app-h small {
+  color: #9aa49d;
+  font-weight: 600;
+  font-size: 0.58rem;
+}
+
+/* 今日の授業カード */
+.today {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.today__card {
+  flex: 1;
+  background: #fff;
+  border-radius: 10px;
+  padding: 9px 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.today__time {
+  font-size: 0.55rem;
+  color: #8a958d;
+}
+
+.today__name {
+  font-weight: 800;
+  font-size: 0.74rem;
+  color: #2f3a34;
+  margin: 2px 0 1px;
+}
+
+.today__room {
+  font-size: 0.55rem;
+  color: #aab3ac;
+}
+
+/* ホーム: 最近のアルバム（2列） */
+.albums2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+
+.album2 {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.album2__img {
+  height: 56px;
+  background: linear-gradient(135deg, #3c463f, #5d6d61);
+  position: relative;
+}
+
+.album2__img span {
+  position: absolute;
+  bottom: 4px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 0.5rem;
+  padding: 1px 5px;
+  border-radius: 6px;
+}
+
+.album2__img .l { left: 4px; }
+.album2__img .r { right: 4px; }
+
+.album2__name {
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 5px 8px 7px;
+  color: #2f3a34;
+}
+
+/* 時間割グリッド（色分け） */
+.tt2__tabs {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.tt2__tab {
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #fff;
+  color: #6a746c;
+}
+
+.tt2__tab.is-active {
+  background: var(--app-green);
+  color: #fff;
+}
+
+.tt2 {
+  display: grid;
+  grid-template-columns: 0.6fr repeat(5, 1fr);
+  gap: 3px;
+}
+
+.tt2 .h {
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-align: center;
+  color: #8a958d;
+  padding-bottom: 2px;
+}
+
+.tt2 .cell {
+  aspect-ratio: 3 / 4;
+  border-radius: 5px;
+  font-size: 0.45rem;
+  padding: 3px;
+  color: #4a564e;
+}
+
+.tt2 .cell.en { background: #f3d4d4; }
+.tt2 .cell.gr { background: #d4e9d8; }
+.tt2 .cell.bl { background: #d4e2f3; }
+.tt2 .cell.pp { background: #e2d4ef; }
+.tt2 .cell.yl { background: #f6e6c4; }
+
+/* アルバム一覧（リスト） */
+.alist__row {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px;
+  margin-bottom: 9px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.alist__thumb {
+  width: 42px;
+  height: 42px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, #3c463f, #5d6d61);
+  flex-shrink: 0;
+}
+
+.alist__name {
+  font-weight: 800;
+  font-size: 0.72rem;
+  color: #2f3a34;
+}
+
+.alist__meta {
+  font-size: 0.55rem;
+  color: #9aa49d;
+  margin-top: 2px;
+}
+
+.alist__row > span {
+  margin-left: auto;
+  color: #c4cdc6;
+}
+
+/* 設定フォーム（授業を追加） */
+.app-form .set-row {
+  font-size: 0.7rem;
+}
+
+/* 下部タブバー */
+.tabbar {
+  display: flex;
+  justify-content: space-around;
+  background: #f6f1e7;
+  border-top: 1px solid #e4ddce;
+  padding: 7px 0 9px;
+}
+
+.tabbar__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.5rem;
+  color: #aab3ac;
+  font-weight: 600;
+}
+
+.tabbar__item.is-active {
+  color: var(--app-green);
+}
+
+.tabbar__ico {
+  font-size: 0.95rem;
+}
+
+/* 吹き出しを画面内に重ねる場合の位置調整 */
+.appscreen .bubble {
+  position: absolute;
+  margin-top: 0;
+}
+
+.shot__visual .phone {
+  position: relative;
+}
+
+/* =========================================================
+   料金プラン（コマフォト Pro）
+   ========================================================= */
+.pro-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  max-width: 780px;
+  margin: 0 auto 48px;
+}
+
+.pro-feature {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 13px 15px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--color-primary-dark);
+}
+
+.pro-feature::before {
+  content: "✓";
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.plan {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 26px 18px 22px;
+  text-align: center;
+}
+
+.plan.is-best {
+  border: 2px solid var(--color-primary);
+  box-shadow: var(--shadow);
+}
+
+.plan__badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 13px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.plan__name {
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  margin-bottom: 10px;
+}
+
+.plan__price {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1.1;
+}
+
+.plan__per {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  margin-top: 4px;
+}
+
+.plan__note {
+  font-size: 0.78rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.pro-disclaimer {
+  max-width: 760px;
+  margin: 32px auto 0;
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .pro-features {
+    grid-template-columns: 1fr;
+  }
+
+  .plans {
+    grid-template-columns: 1fr 1fr;
+  }
+}
